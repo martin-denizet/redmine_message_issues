@@ -7,7 +7,11 @@
                     :method => :delete,
                     :data => {:confirm => l(:text_are_you_sure)},
                     :title => l(:label_relation_delete) if User.current.allowed_to?(:delete_message_issues, @project) %>
-        <%= link_to_issue message_issue.issue %>
+        <% unless message_issue.issue.nil? %>
+            <%= link_to_issue message_issue.issue %>
+        <% else %>
+            Issue deleted
+        <% end %>
       </li>
   <% end %>
 </ul>
