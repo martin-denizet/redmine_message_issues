@@ -1,0 +1,2 @@
+module MessageIssueHelper
+end

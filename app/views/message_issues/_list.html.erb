@@ -1,0 +1,13 @@
+<ul>
+  <% MessageIssue.where('message_id = ?', @message.id).each do |message_issue| %>
+      <li>
+        <%= link_to image_tag('link_break.png'),
+                    {controller: 'message_issues', action: 'delete', message_issue_id: message_issue.id, message_id: @message},
+                    :remote => true,
+                    :method => :delete,
+                    :data => {:confirm => l(:text_are_you_sure)},
+                    :title => l(:label_relation_delete) if User.current.allowed_to?(:delete_message_issues, @project) %>
+        <%= link_to_issue message_issue.issue %>
+      </li>
+  <% end %>
+</ul>
