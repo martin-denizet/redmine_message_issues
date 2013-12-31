@@ -21,7 +21,7 @@ var html= '<div id=\"redmine_message_issues\" style=\"float:right;\">';"
 
         if User.current.allowed_to?(:add_message_issues, @project)
           header_string += "html +='#{view_context.link_to(view_context.image_tag('link.png', :style => 'vertical-align: middle;')+' Link issue',
-                                                           {controller: 'message_issues', action: 'new', message_id: @message.id},
+                                                           {:controller => 'message_issues', :action => 'new', :message_id => @message.id},
                                                            :remote => true,
                                                            :method => 'get',
                                                            :title => l(:label_relation_new),

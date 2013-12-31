@@ -1,6 +1,6 @@
 <%= form_for @message_issue, {
         :as => :message_issue, :remote => true,
-        :url => {controller: 'message_issues', action: 'create'},
+        :url => {:controller => 'message_issues', :action => 'create'},
         :method => :post,
         :html => {:id => 'new-relation-form'}
 } do |f| %>
