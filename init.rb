@@ -3,6 +3,7 @@ require 'redmine'
 
 Rails.configuration.to_prepare do
   require_dependency 'redmine_message_issues/messages_controller_patch'
+  require_dependency 'redmine_message_issues/message_issues_listener'
 end
 
 

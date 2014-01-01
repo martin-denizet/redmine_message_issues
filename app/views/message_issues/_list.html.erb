@@ -1,5 +1,8 @@
+<%
+   @message_issues = MessageIssue.where('message_id = ?', @message.id)
+%>
 <ul>
-  <% MessageIssue.where('message_id = ?', @message.id).each do |message_issue| %>
+  <% @message_issues.each do |message_issue| %>
       <li>
         <%= link_to image_tag('link_break.png'),
                     {:controller => 'message_issues', :action => 'delete', :message_issue_id => message_issue.id, :message_id => @message},
@@ -10,7 +13,7 @@
         <% unless message_issue.issue.nil? %>
             <%= link_to_issue message_issue.issue %>
         <% else %>
-            Issue deleted
+            <%= l(:label_deleted) %>
         <% end %>
       </li>
   <% end %>
