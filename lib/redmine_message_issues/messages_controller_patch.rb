@@ -30,7 +30,7 @@ var html= '<div id=\"redmine_message_issues\" style=\"float:right;\">';"
 
         header_string += "html += '<div id=\"message_issues\">#{view_context.escape_javascript(view_context.render :partial => 'message_issues/list')}</div><div id=\"new_message_issue\"></div></div>';"
 
-        header_string += "$(html).insertBefore($('#content .contextual').first());
+        header_string += "$(html).insertBefore($('#content .message').first());
 });
 </script>"
         content_for :header_tags, header_string.html_safe if User.current.allowed_to?(:view_message_issues, @project)
