@@ -1,0 +1,7 @@
+en:
+  mi_link_new_issue: "Link new issue"
+  mi_message_deleted: "Issue #%{issue_id} deleted"
+  mi_issue_does_not_exist: "Issue #%{issue_id} does not exist"
+  mi_duplicate_record: "Issue #%{issue_id} is already associated to this message"
+  mi_cross_project_relations_forbidden: "Cross-project issue relations are disabled, cannot link Issue #%{issue_id}"
+
