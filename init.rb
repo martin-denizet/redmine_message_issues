@@ -11,7 +11,7 @@ Redmine::Plugin.register :redmine_message_issues do
   author 'Martin DENIZET'
   url 'https://github.com/martin-denizet/redmine_message_issues'
   author_url 'http://martin-denizet.com'
-  description 'Allows to link an Issue to a forum Message'
+  description 'Allows to link Issues to a Forum Message'
   version '0.1.0'
 
   requires_redmine :version_or_higher => '2.0.0'
