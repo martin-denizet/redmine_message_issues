@@ -2,8 +2,7 @@ require 'redmine'
 
 
 Rails.configuration.to_prepare do
-  require_dependency 'redmine_message_issues/messages_controller_patch'
-  require_dependency 'redmine_message_issues/message_issues_listener'
+  require_dependency 'redmine_message_issues/message_issues_hook'
 end
 
 
@@ -19,11 +18,17 @@ Redmine::Plugin.register :redmine_message_issues do
 
   project_module :message_issues do
 
-    permission :delete_message_issues, :message_issues => :delete
+    permission :delete_message_issues, {
+        :message_issues => :delete
+    }
 
-    permission :add_message_issues, :message_issues => [:new, :create]
+    permission :add_message_issues, {
+        :message_issues => [:new, :create]
+    }
 
-    permission :view_message_issues, :message_issues => :show
+    permission :view_message_issues, {
+        :message_issues => :show
+    }
   end
 
 end
