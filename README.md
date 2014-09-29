@@ -44,6 +44,7 @@ The installation is now finished and you will be able to use the plugin after yo
 
 * Krzysztof Dryja: Original idea
 * Martin Denizet: Development
+* LeDistordu: French translations
 
 ## License
 
