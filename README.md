@@ -40,6 +40,11 @@ The installation is now finished and you will be able to use the plugin after yo
 * Enable the plugin module in the desired projects settings
 * Configure the permissions
 
+## Changelog
+
+* 0.1.1 Cleaner integration of the JavaScript and French translations. Thanks @LeDistordu
+* 0.1.0 Initial release
+
 ## Credits
 
 * Krzysztof Dryja: Original idea
@@ -49,5 +54,3 @@ The installation is now finished and you will be able to use the plugin after yo
 ## License
 
 GPLv2
-
-

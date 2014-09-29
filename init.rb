@@ -12,7 +12,7 @@ Redmine::Plugin.register :redmine_message_issues do
   url 'https://github.com/martin-denizet/redmine_message_issues'
   author_url 'http://martin-denizet.com'
   description 'Allows to link Issues to a Forum Message'
-  version '0.1.0'
+  version '0.1.1'
 
   requires_redmine :version_or_higher => '2.0.0'
 
