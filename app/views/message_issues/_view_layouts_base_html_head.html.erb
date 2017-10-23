@@ -1,0 +1,25 @@
+<script type='text/javascript'>
+    $(document).ready(function () {
+        var html = '<div id=\"redmine_message_issues\" style=\"right:10px;position:absolute\" class=\"issue\">';
+
+        <% if authorize_for('message_issues', 'show') %>
+        html += '<div id=\"message_issues\"><%= escape_javascript(render :partial => 'message_issues/list') %></div><div id=\"new_message_issue\"></div></div>';
+        <% end %>
+
+        $(html).insertAfter($('#content h2').first());
+
+        <% if authorize_for('message_issues', 'new') %>
+        var link = '<%= link_to(image_tag('link.png', :style => 'vertical-align: middle;')+t(:mi_link_new_issue),
+            {:controller => 'message_issues', :action => 'new', :message_id => @message.id, :board_id => @board.id},
+                :remote => true,
+                :method => 'get',
+                :title => l(:label_relation_new),
+                :tabindex => 200)
+        %>';
+        $(link).appendTo($('#content .contextual').first());
+        <% end %>
+
+
+    })
+    ;
+</script>

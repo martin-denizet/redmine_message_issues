@@ -1,0 +1,6 @@
+fr:
+  mi_link_new_issue: "Attacher un ticket"
+  mi_message_deleted: "Ticket #%{issue_id} supprimé"
+  mi_issue_does_not_exist: "Le ticket #%{issue_id} n'existe pas"
+  mi_duplicate_record: "Le Ticket #%{issue_id} est déjà attaché à ce message"
+  mi_cross_project_relations_forbidden: "L'attache de ticket entre plusieurs projets est désactivée, impossible d'attacher le ticket #%{issue_id}"

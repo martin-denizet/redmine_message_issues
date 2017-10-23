@@ -1,11 +1,12 @@
 <%
    @message_issues = MessageIssue.where('message_id = ?', @message.id)
 %>
-<ul>
+<h4>Related issues</h4>
+<ul style="list-style-type: none">
   <% @message_issues.each do |message_issue| %>
       <li>
         <%= link_to image_tag('link_break.png'),
-                    {:controller => 'message_issues', :action => 'delete', :message_issue_id => message_issue.id, :message_id => @message},
+                    {:controller => 'message_issues', :action => 'delete', :message_issue_id => message_issue.id, :message_id => @message, :board_id => @board},
                     :remote => true,
                     :method => :delete,
                     :data => {:confirm => l(:text_are_you_sure)},
@@ -13,8 +14,11 @@
         <% unless message_issue.issue.nil? %>
             <%= link_to_issue message_issue.issue %>
         <% else %>
-            <%= l(:label_deleted) %>
+            <%= l(:mi_message_deleted, {:issue_id => message_issue.issue_id}) %>
         <% end %>
       </li>
   <% end %>
 </ul>
+<% if @message_issues_error %>
+    <p id="errorExplanation"><%= @message_issues_error %></p>
+<% end %>
