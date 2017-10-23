@@ -1,0 +1,18 @@
+<% if @issue %>
+    <h3><%= l(:label_message_plural) %></h3>
+    <%
+       @message_issues = MessageIssue.where('issue_id = ?', @issue.id)
+    %>
+    <ul>
+      <% @message_issues.each do |message_issue| %>
+          <li>
+
+            <% unless message_issue.message.nil? %>
+                <%= link_to_message message_issue.message %>
+            <% else %>
+                <%= l(:label_deleted) %>
+            <% end %>
+          </li>
+      <% end %>
+    </ul>
+<% end %>
