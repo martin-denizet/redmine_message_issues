@@ -1,9 +1,9 @@
 class MessageIssuesController < ApplicationController
   unloadable
 
-  before_filter :find_message, :only => [:new, :create, :delete]
-  before_filter :find_project, :only => [:new, :create, :delete]
-  before_filter :authorize
+  before_action :find_message, :only => [:new, :create, :delete]
+  before_action :find_project, :only => [:new, :create, :delete]
+  before_action :authorize
 
   def new
     @message_issue = MessageIssue.new

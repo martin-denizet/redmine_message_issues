@@ -1,6 +1,6 @@
 <script type='text/javascript'>
     $(document).ready(function () {
-        var html = '<div id=\"redmine_message_issues\" style=\"right:10px;position:absolute\" class=\"issue\">';
+        var html = '<div id=\"redmine_message_issues\" style=\"right:10px;position:absolute;background:transparent;border:none\" class=\"issue\">';
 
         <% if authorize_for('message_issues', 'show') %>
         html += '<div id=\"message_issues\"><%= escape_javascript(render :partial => 'message_issues/list') %></div><div id=\"new_message_issue\"></div></div>';

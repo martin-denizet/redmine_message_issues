@@ -3,8 +3,8 @@ require 'redmine'
 
 Rails.configuration.to_prepare do
   require_dependency 'redmine_message_issues/message_issues_hook'
+  require_dependency 'redmine_message_issues/message_issues_listener'
 end
-
 
 Redmine::Plugin.register :redmine_message_issues do
   name 'Redmine Message Issues'
